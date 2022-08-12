@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,tikz-cd}
+
+\usepackage[top=1cm, left=1 cm, right=1 cm,bottom=1.5 cm]{geometry}
+
+\title{Thermodynamics fundamental relations}
+\author{Keerthi vasan M}
+\date{April 2022}
+
+\begin{document}
+
+\noindent \textbf{\Large DIFFERENTIAL FORM OF ENERGY PROPERTIES}\\[0.4cm]
+Energy properties like $(U,H,G,\text{ and }A)$ are related to the reference properties $(P,T,V,\text{ and }S)$ as follows:\\[0.2 cm]
+First law of thermodynamics: $dU = dQ + dW$ here $dW = -PdV$ and $dQ=TdS$. So,
+\begin{equation} \label{U}
+\begin{split}
+    dU=TdS-PdV=U(S,V)
+\end{split}
+\end{equation}
+ 
+\noindent Enthalpy $H$ is given by $H=U+PV$. Therefore,
+\begin{equation} \label{H}
+\begin{split}
+    dH&=dU+d(PV) \\
+    &=dU+PdV+VdP\\
+    &=(TdS-PdV)+PdV+VdP \text{\ \ (Using equation (\ref{U}))}\\
+    &=TdS+VdP\\
+    \Rightarrow dH&=TdS+VdP=H(S,P)
+\end{split}
+\end{equation}
+    
+\noindent Gibb's free energy $G$ is given by $G=H-TS$. Therefore,  
+\begin{equation} \label{G}
+\begin{split}
+    dG&=dH-d(TS) \\
+    &=dH-TdS-SdT\\
+    &=(TdS+VdP)-TdS-SdT \text{\ \ (Using equation (\ref{H}))}\\
+    &=VdP-SdT\\
+    \Rightarrow dG&=VdP-SdT=G(P,T)
+\end{split}
+\end{equation} 
+    
+\noindent Helmholtz free energy $A$ is given by $A=U-TS$. Therefore,  
+\begin{equation} \label{A}
+\begin{split}
+    dA&=dU-d(TS) \\
+    &=dU-TdS-SdT\\
+    &=(TdS-PdV)-TdS-SdT \text{\ \ (Using equation (\ref{U}))}\\
+    &=-PdV-SdT\\
+    \Rightarrow dA&=-PdV-SdT=A(V,T)
+\end{split}
+\end{equation}
+Now using the exact differential property of equation (\ref{U}) to (\ref{A}), we derive the well known Mazwell's equations as follows,
+\begin{equation}
+    \bigg(\frac{\partial T}{\partial V}\bigg)_S = -\bigg(\frac{\partial P}{\partial S}\bigg)_V,\ \  \bigg(\frac{\partial T}{\partial P}\bigg)_S = \bigg(\frac{\partial V}{\partial S}\bigg)_P ,\ \  \bigg(\frac{\partial V}{\partial T}\bigg)_P = -\bigg(\frac{\partial S}{\partial P}\bigg)_T,\ \  \bigg(\frac{\partial P}{\partial T}\bigg)_V = \bigg(\frac{\partial S}{\partial V}\bigg)_T
+\end{equation}\\
+\textbf{\Large MNEMONIC DIAGRAM}\\[0.4cm]
+
+\begin{center}
+\begin{tikzcd}
+V \arrow[rr, "A", no head]                                        &  & T                                        \\
+                                                                  &  &                                          \\
+S \arrow[uu, "U", no head] \arrow[rr, "H"', no head] \arrow[rruu] &  & P \arrow[uu, "G"', no head] \arrow[lluu]
+\end{tikzcd}    
+\end{center}
+\noindent
+$V,T,P,S$ - ``\textbf{V}ijay's \textbf{T}uppakki is \textbf{P}akka \textbf{S}uperhit" and $A,G,H,U$ - Alphabetical order. Using the above diagram, derive the differential form of equation (\ref{U}) to (\ref{A}).
+
+\end{document}

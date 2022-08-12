@@ -1,0 +1,374 @@
+\documentclass[a4paper, 12 pt]{article}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[left=2cm, top=1.5cm, right=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{tikz,amsmath}
+\usetikzlibrary{tikzmark,calc}
+\usepackage[version=4]{mhchem}
+
+
+%-----------------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------
+\begin{document}
+
+\begin{center}
+    \large \textbf{Important Dimensionless Numbers}    
+\end{center}
+
+\begin{flushright}
+    Keerthi Vasan M\\Chemical Engineering Graduate (2020)\\kvasan166@gmail.com\\Tamil Nadu, INDIA
+\end{flushright}
+
+\rule{\linewidth}{0.5 pt}
+
+\begin{enumerate}
+    \item \textbf{Schmidt number (Sc) :} Sc gives the relative ease of momentum and mass transport in a flow system and it is the mass transfer analogue of Prandtl number (Pr). It relates the thickness of the momentum and diffusion boundary layers. $$\text{Sc}=\frac{\text{Momentum diffusivity}\ (\nu)}{\text{Mass diffusivity}\  (D)}=\frac{\big(\frac{\mu}{\rho}\big)}{D}=\frac{\mu}{\rho D}$$ $D$ - Diffusivity of the system (m$^2$/s), $\rho$ - Density (kg/m$^3$), $\mu$ - Dynamic viscosity of the fluid (Pa s).
+    
+    \item \textbf{Prandtl number (Pr) :} Pr gives the relative ease of momentum and energy transport in a flow system. It is more frequently used in heat transfer calculations. It relates the thickness of the momentum and thermal boundary layers. If Pr $<$ 1, heat diffuses quickly or thermal boundary layer is much thicker when compared to velocity/momentum boundary layer. Generally for gases Pr $\simeq$ 0.1 and for liquid metals Pr $\simeq$ 0.01 to 0.04. $$\text{Pr}=\frac{\text{Momentum diffusivity}\ (\nu)}{\text{Thermal diffusivity}\  (\alpha)}=\frac{\big(\frac{\mu}{\rho}\big)}{\big(\frac{k}{\rho C_P}\big)}=\frac{C_P\ \mu}{k}$$ $\rho$ - Density (kg/m$^3$), $\mu$ - Dynamic viscosity of the fluid (Pa s), $k$ - Thermal conductivity (W/m K), $C_P$ - Specific heat capacity (J/kg K).
+    
+    \item \textbf{Lewis number (Le) :} Le is used to characterize a flow system where simultaneous heat and mass transfer occurs. For a air-water vapour system, Le $=$ 1. Which results in the Lewis relation (used to prove that Wet Bult Temperature (T$_{\text{WBT}}$) is equal to Adiabatic Saturation Temperature (T$_{\text{as}}$)). $$\text{Le}=\frac{\text{Sc}}{\text{Pr}}=\frac{\text{Thermal diffusivity}\ (\alpha)}{\text{Mass diffusivity}\  (D)}=\frac{\big(\frac{k}{\rho C_P}\big)}{D}=\frac{k}{\rho \ D\ C_P}$$Lewis relation derivation for air-water vapour system : Chilton - Colburn Analogy gives
+    
+    \begin{equation}\label{cca}
+        \underbrace{\frac{f_F}{2}}_{j_M}=\underbrace{\frac{k_C\ \text{Sc}^{2/3}}{v}}_{j_D}=\underbrace{\frac{h\ \text{Pr}^{2/3}}{G\ C_P}}_{j_H}
+    \end{equation}
+    
+    Le $=$ 1 implies, Pr = Sc. Therefore equation (\ref{cca}) gives, $\frac{k_C}{v}=\frac{h}{G\ C_P}$. Now by doing the following substitution $\rho = \text{c M}_\text{B}$, $k_y=k_c\ c$, $C_p=C_s$ and $k_Y=M_B\ k_y$, we get Lewis relation as $\boxed{\frac{h}{k_Y\ C_s}=1}$.\\[2 mm]$\rho$ - Density (g/m$^3$), $k$ - Thermal conductivity (W/m K), $C_P$ - Specific heat capacity (J/kg K), $f_F$ - Fanning friction factor, $k_C$ - Mass transfer co-efficient for concentration driving force, $v$ - fluid velocity (m/s), $h$ - Convective heat transfer co-efficient (W/m$^2$ K), $G$ - Mass velocity in kg/ m$^2$s ($=\rho \ v$), $C_s$ - Humid heat of the air-water vapour system, $M_B$ - Molecular weight of dry air ($=$ 29 g/mol), $c$ - Concentration of vapour in the mixture (mol/m$^3$), $k_y$ - Mass transfer co-efficient for mole fraction driving force, $k_Y$ - Mass transfer co-efficient for absolute humidity driving force.
+    
+    
+    \item \textbf{Peclet number (Pe) :} Pe is used in convective heat transfer calculations. It is the ratio of thermal energy convected to the fluid to the thermal energy conducted within the fluid. In practical applications, Pe is very high. Sometimes, Pe is also known as Bodenstein number (Bo). $$\text{Pe} =\frac{\text{Heat transport by convection}}{\text{Heat transport by conduction}}= \text{Re\ Pr}=\bigg( \frac{\rho \ v\ L}{\mu} \bigg)\bigg( \frac{\nu}{\alpha} \bigg)=\frac{L\ v}{\alpha}$$
+    Similarly mass transfer analogue of Pe is defined as $$\text{Pe} =\frac{\text{Mass transport by convection}}{\text{Mass transport by conduction}}= \text{Re\ Sc}=\bigg( \frac{\rho \ v\ L}{\mu} \bigg)\bigg( \frac{\mu}{\rho \ D} \bigg)=\frac{L\ v}{D}$$ Dispersion number is defined as $ \frac{1}{\text{Pe}}$. Dispersion number is a important dimensionless number which measures the extend of axial dispersion in a chemical reactor.
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Reactor}                                      & \textbf{\begin{tabular}[c]{@{}l@{}}Nature of \\ reactor\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Dispersion/\\ Diffusion coefficient ($D$)\end{tabular}} & \textbf{Pe or Dispersion number} \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Ideal \\ CSTR\end{tabular} & \begin{tabular}[c]{@{}l@{}}Infinite axial \\ mixing\end{tabular}      & Very high $D$                                                                          & Pe = 0 (or) Dispersion number = $\infty$ \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Ideal\\ PFR\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Zero axial \\ mixing\end{tabular}          & Very low $D$ or zero $D$                                                                        & Pe = $\infty$ (or) Dispersion number = 0  \\ \hline
+        \end{tabular}
+    \end{table}
+    \\
+    $\rho$ - Density (g/m$^3$), $v$ - Fluid velocity (m/s), $L$ - Characteristic length of the system (m), $\mu$ - Dynamic viscosity of the fluid (Pa s), $\nu$ - Momentum diffusivity (m$^2$/s), $\alpha$ - Thermal diffusivity (m$^2$/s), $D$ - Diffusivity of the system (m$^2$/s) / Dispersion co-efficient.
+    
+    \item \textbf{Nusselt number (Nu) :} It is defined as a ratio of convective heat flux to conductive heat flux in a fluid boundary layer. Nu represents the enhancement of heat transfer through a fluid layer as  a result of convection relative to conduction across the same fluid layer. $$\text{Nu}=\frac{\text{Convective heat flux}}{\text{Conductive heat flux (Fourier's law)}}=\frac{ h\ \triangle T }{\big(\frac{k\ \triangle T}{L}\big)}=\frac{h\ L}{k}$$ Nu = 
+    $\begin{cases} 
+    1,& \text{Heat transfer across the fluid layer is by pure conduction}\\
+    1 - 10, & \text{Laminar flow} \\
+    100 - 1000,&\text{More active convection or Turbulent flow}  
+    \end{cases}$
+    \\[2 mm] $h$ - Convective heat transfer co-efficient (W/m$^2$ K), $T$ - Temperature (K), $k$ - Thermal conductivity (W/m K), $L$ - Characteristic length of the system (m).
+    
+    \item \textbf{Sherwood number (Sh) :} It is the mass transfer analogue of Nusselt number (Nu). It is defined as $$\text{Sh}=\frac{\text{Convective mass flux}}{\text{Conductive mass flux (Fick's law)}}=\frac{ k_c\ \triangle C }{\big(\frac{D\ \triangle C}{L}\big)}=\frac{k_c\ L}{D}$$
+    $k_c$ - Mass transfer co-efficient for concentration driving force, $D$ - Diffusivity of the system (m$^2$/s), $L$ - Characteristic length of the system (m).
+    
+    \item \textbf{Biot number (Bi) :} It is similar to Nusselt number (Nu) but it is for a solid body. Whereas, Nu is for a fluid layer. It arises in the transient heat conduction calculations, particulary in lumped heat capacitance model. $$\text{Bi}=\frac{\text{Convective heat flux}}{\text{Conductive heat flux (Fourier's law)}}=\frac{\text{Internal conductive resistance}}{\text{Surface convective resistance}}=\frac{\big( \frac{L}{k} \big)}{\big( \frac{1}{h} \big)}=\frac{h\ L}{k}$$
+    \begin{itemize}
+        \item If Bi $<$ 0.1, then internal conductive resistance is zero which makes the system a perfect lumped heat capacitance system. There won't be any resistance for heat flow on the body. So, temperature is uniform through out the body. 
+        
+        \item If Bi $<$ 1, then the system can be considered as a approximate lumped heat capacitance system. 
+        
+        \item If Bi $>$ 1, then internal conductive resistance is significant. So, temperature distribution is non-uniform across the body and the calculations become complex.
+    \end{itemize}
+    \underline{Important fact :} Ratio of Nusselt number to Biot number gives,$$\frac{\text{Nu}}{\text{Bi}}= \frac{\big( \frac{h\ L}{k} \big)_{\text{fluid}}}{\big( \frac{h\ L}{k} \big)_{\text{solid}}}=\frac{k_{\text{solid}}}{k_{\text{fluid}}}=\frac{R_{\text{fluid}}}{R_{\text{solid}}}=\frac{\text{Conductive resistance of fluid}}{\text{Conductive resistance of solid}}$$
+    $h$ - Convective heat transfer co-efficient (W/m$^2$ K), $T$ - Temperature (K), $k$ - Thermal conductivity (W/m K), $L$ - Characteristic length of the system (m).
+    
+    \item \textbf{Fourier number (Fo) :} It arises in the unsteady state heat conduction calculations. Mainly in the lumped heat capacitance systems (from the term ($hAt$/$\rho CV$)).$$\frac{hAt}{\rho C\tikzmarknode{VFO}{V}}=\frac{ht}{\rho CL}=\bigg( \frac{hL}{k} \bigg) \bigg( \frac{kt}{\rho CL^2}\bigg)=Bi\ \bigg( \frac{\alpha t}{L^2}\bigg)=Bi\ Fo$$ 
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (VFO.south) to[out=-90,in=180,looseness=1] ($(VFO)+(0.75,-0.5)$) node[right] {$AL$};
+    \end{tikzpicture}
+    
+    
+    \vspace{ 2 mm } $h$ - Convective  heat  transfer  co-efficient  (W/m$^2$ K), $A$ - Cross sectional area of the body (m$^2$), $t$ - Time (s), $\rho$ - Density of the body (g/m$^3$), $C$ - Specific heat capacity of the body (J/ mol K), $V$ - Volume of the body (m$^3$), $L$ - Characteristic length of the system (m), $k$ - Thermal conductivity (W/m K), $Bi$ - Biot number, $\alpha$ - Thermal diffusivity (m$^2$/s).
+    
+    \item \textbf{Stanton number (St) :} St is generally used in the forced convective heat transfer calculations and in heat, mass and momentum transfer analogies like Reynolds analogy, Chilton - Colburn analogy, \textit{etc}. It is defined as a ratio of heat transferred to a fluid to the heat capacity of the fluid. The stanton number arises in the consideration of geometeric similarity of the momentum boundary layer, where it can be used to express a relationship between the shear force at the wall (due to viscous drag) and the total heat transfer at the wall (due to thermal diffusivity). $$\text{St}=\frac{\text{Heat transfered to a fluid}}{\text{Thermal capacity of the fluid}}=\frac{\text{Nu}}{\text{Re Pr}} = \frac{h}{\rho \ v\ C_P}=\frac{h}{G\ C_P}$$Similarly mass transfer analogue of St is defined as
+    $$\text{St}=\frac{\text{Sh}}{\text{Re Sc}} = \frac{\big( \frac{k_c\ L}{D} \big)}{\big( \frac{\rho \ v\ L}{\mu} \big) \big( \frac{\mu}{\rho \ D}\big) }=\frac{k_c}{v}$$
+    $\text{Nu}$ - Nusselt number, $\text{Re}$ - Reynolds number,
+    $\text{Pr}$ - Prandtl number, $\text{Sh}$ - Sherwood number,
+    $\text{Sc}$ - Schmidt number, $h$ - Convective heat transfer co-efficient (W/m$^2$ K), $\rho$ - Density  (g/m$^3$), $v$ - Fluid velocity (m/s), $C_P$ - Specific heat capacity (J/kg K), $G$ - Mass velocity in kg/ m$^2$ s (=$\rho \ v$), $k_c$ - Mass transfer co-efficient for concentration driving force, $L$ - Characteristic length of the system (m), $D$ - Diffusivity of the system (m$^2$/s), $\mu$ - Dynamic viscosity of the fluid (Pa s).
+    
+    
+    \item \textbf{Damkohler number (Da) :} It is used to relate the chemical reaction rate to the transport phenomena rate occuring in a system. For a general n$^\text{th}$ order chemical reaction \ce{A -> B}, Da is defined as $$\text{Da}=\frac{\text{Rate of consumption of A by reaction}}{\text{Rate of transport of A by convection}}=\frac{-r_A \ V}{F_{A0}}=\frac{kC_{A0}^nV}{\nu_0 C_{A0}}=kC_{A0}^{n-1}\tau$$Therefore for a 1$^{\text{st}}$ order chemical reaction, $\boxed{\text{Da} = k\ \tau}$.\\[2 mm]
+    $-r_A$ - Rate of consumption of A in the reaction (mol/m$^3$ s),
+    $V$ - Volume of the reaction  mixture (m$^3$),
+    $F_{A0}$ - Molar flow rate of A (mol/s),
+    $k$ - First order rate constant (s$^{-1}$),
+    $C_{A0}$ - Initial concentration of A (mol/m$^3$),
+    $\nu _{0}$ - Initial volumeteric flow rate (m$^3$/s),
+    $\tau$ - Space/residence time (s) ($= \frac{V}{\nu _0}$).
+    
+    \item \textbf{Dean number (De) :} It is used in the study of flow and heat transfer in coiled tube/pipes and channels.\vspace{1 cm}
+    % $$\text{De} = \text{Re}\sqrt{\frac{D}{2R_C}}$$ 
+    %$Re$ - Reynolds number, $D$ - Hydraulic diameter (m), $R_C$ - Path curvature radius (m).
+    \tikzset{every node/.style={outer sep=2pt}}
+     \[
+    \tikzmarknode{De}{\text{De}} = \tikzmarknode{Re}{\text{Re}}\sqrt{\frac{{\tikzmarknode{D}{D}}}{\tikzmarknode{2RC}{2R_C}}}
+    \]
+    
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (De.north) to[out=90,in=60,looseness=1.5] ($(De)+(-1,0)$) node[left] {Dean number};
+        \draw[->] (Re.north) to[out=90,in=180] ($(Re)+(1.2,1.2)$) node[right] {Reynolds number};
+        \draw[->] (D.east) to[out=45,in=190] ($(D)+(1.5,-1)$) node[right] {Hydraulic diameter};
+        \draw[->] (2RC.south) to[out=-90,in=0] ($(2RC)+(-1.5,-1)$) node[left] {Path curvature radius};
+    \end{tikzpicture}\\
+    
+    \item \textbf{Reynolds number (Re) :} Boundary layer seperation occurs when Re $>$ 1 and the flow decelerates due to separation. \vspace{10 mm}
+    \[
+    \tikzmarknode{Re}{\text{Re}}=\frac{{\tikzmarknode{IF}{\text{Interial force}}}}{{\tikzmarknode{VF}{\text{Viscous force}}}}=\frac{{   \tikzmarknode{m}{\text{m}} \tikzmarknode{a}{\text{a}}     }} {  \tikzmarknode{Tau}{\tau} \tikzmarknode{A}{\text{A}}  } = \frac{{   \tikzmarknode{m_dot}{\dot{\text{m}}} \tikzmarknode{u}{\text{u}}     }} {  \tikzmarknode{Tau}{\tau} \tikzmarknode{A}{\text{A}}  } = \frac{\rho \ A\ u^2}{\mu \big( \frac{u}{L}\big)A}=\frac{\rho \ u\ L}{\mu}=\frac{u\ L}{\nu}
+    \]
+    
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (m_dot.north) to[out=90,in=180, looseness=1] ($(m_dot)+(0.65,1.5)$) node [right] {$\rho$Q  $= \rho \text{Au}$};
+        \draw[->] (a.north) to[out=70, in=160, looseness=1] ($(a)+(0.4,0.8)$) node[right] {$\frac{u}{t}$};
+        \draw[->] (Tau.south) to[out=-110, in=0, looseness=1] ($(Tau)+(-1,-1)$) node [left] {$ \mu \ \frac{u}{L} \Leftarrow \mu \ \frac{du}{dy}$};
+    \end{tikzpicture}
+    
+    \vspace{5 mm} m - Mass (g), a - Acceleration (m/s$^2$), $\tau$ - Shear stress (Pa), A - Area (m$^2$), $u$ - Velocity (m/s), $t$ - Time (s), $\mu$ - Dynamic viscosity (Pa s), $L$ - Characteristic length of the system (m), $\rho$ - Density (g/m$^3$), $Q$ - Volumetric flow rate (m$^3$/s), $\nu$ - Kinematic viscosity (m$^2$/s).
+    
+    \item \textbf{Froude number (Fr) :} 
+    \[
+    \tikzmarknode{F}{\text{Fr}}=\sqrt{\frac{{\tikzmarknode{IF}{\text{Interial force}}}}{{\tikzmarknode{GF}{\text{Gravity force}}}}}=\sqrt{\frac{\rho \ A\ u^2}{\tikzmarknode{m}{m}\ g}}=\sqrt{\frac{\rho \ A\ u^2}{\rho\ A\ L\ g}}=\frac{u}{\sqrt{Lg}}
+    \]
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (m.south) to[out=-90, in=90, looseness=1.5] ($(m)+(-1,-1)$) node[below] {$\rho \ V\ \simeq \rho\ L^3 \simeq \rho \ AL$};
+    \end{tikzpicture}
+    
+    
+    \vspace{12mm} m - Mass (g), A - Area (m$^2$), $u$ - Velocity (m/s), $L$ - Characteristic length of the system (m), $\rho$ - Density (g/m$^3$), $g$ - Acceleration due to gravity (m/s$^2$).
+    
+    \item \textbf{Euler number (Eu) :} 
+    \begin{itemize}
+        \item Ruark number $\text{Ru}=\sqrt{\frac{\text{Interial force}}{\text{Pressure force}}}=\sqrt{\frac{\rho \ A\ u^2}{\triangle P\ A}}=u{\sqrt{\frac{\rho}{\triangle P}}}$
+        
+        \item Euler number $=\frac{1}{\text{Ru}}=\frac{1}{u}{\sqrt{\frac{\triangle P}{\rho}}}$. For frictionless flow, Eu $=$ 1.
+        
+        \item Euler number (Eu) is called Cavitation number (Ca) when $\triangle P=P-P^v$.
+        
+    \end{itemize}
+    $P^v$ - vapour pressure (Pa), A - Area (m$^2$), $u$ - Velocity (m/s), $\rho$ - Density (g/m$^3$).
+    
+    \item \textbf{Weber number (We) :} $$\text{We}=\sqrt{\frac{\text{Inertial force}}{\text{Surface tension force}}}=\sqrt{\bigg(\frac{\rho\tikzmarknode{A}{A}u^2}{\sigma L}\bigg)}=u\sqrt{\frac{\rho L}{\sigma}}$$
+    
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (A.north) to[out=90, in=180, looseness=1.5] ($(A)+(0.425,0.75)$) node[right] {$L^2$};
+    \end{tikzpicture}
+    $\rho$ - Density (g/m$^3$), $A$ - Area (m$^2$), $u$ - Velocity (m/s), $\sigma$ - Surface tension (N/m), $L$ - Characteristic length of the system (m).
+    
+    \item \textbf{Mach number (Ma) :} $$\text{Ma}=\sqrt{\frac{\text{Inertial force}}{\text{Elastic force}}}=\sqrt{\frac{\rho A u^2}{kA}}=u\sqrt{\frac{\rho}{k}}=\frac{u}{C}$$
+    $\rho$ - Density (g/m$^3$), $A$ - Area (m$^2$), $u$ - Velocity (m/s), $k$ - Elastic stress, $C$ - Velocity of the sound in the fluid (m/s) $(=\sqrt{\frac{k}{\rho}})$.
+    
+    \item \textbf{Grashof number (Gr) :} Gr is used in the free/natural convection calculations to classify the flow (flow classification is done based on the value of the term ``GrPr"). Gr has the same functionality as the Reynolds number (Re). Grashof number (Gr) is defined as
+    \begin{equation}\label{GR}
+        \text{Gr}=\frac{\text{Buoyancy force}}{\text{Viscous force}}=\frac{F_b}{F_v}
+    \end{equation}
+    Since in natural convections, we need to consider changes in density of the fluid which results in fluid motion. To account those density changes, we consider Thermal coefficient of expansion ($\beta$).\vspace{1 cm}
+    \begin{equation}
+        \beta=\frac{1}{V}\bigg(\frac{d\tikzmarknode{V}{V}}{dT}\bigg)_P=\tikzmarknode{rho}{\rho}\frac{d(\frac{1}{\rho})}{dT}=-\frac{1}{\rho}\frac{d\rho}{dT}=-\frac{d(ln\ \rho)}{dT}
+    \end{equation}\vspace{2 mm}
+    \begin{equation}
+        \Rightarrow \int_{\rho _o}^{\rho} d(ln\ \rho) = -\int_{T_0}^{T} \beta\ dT    
+    \end{equation}
+    \begin{equation}\label{RHO}
+        \Rightarrow\boxed{\rho =\rho_0(1-\beta(T-T_{0}))=\rho_0(1-\beta\triangle T)}    
+    \end{equation}
+     
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (V.north) to[out=90, in=180, looseness=1.5] ($(V)+(0.425,0.75)$) node[right] {Molar volume (m$^3$/mol)};
+        \draw[->] (rho.south) to[out=-90, in=180, looseness=1.5] ($(rho)+(0.425,-0.75)$) node[right] {Molar density (mol/m$^3$)};
+    \end{tikzpicture}
+    
+    For a ideal gas, $PV=nRT\Rightarrow \rho=\frac{P}{RT}\Rightarrow \beta=\frac{1}{T}$. Buoyancy force term of the equation (\ref{GR}) is given by
+    
+    \begin{equation}\label{FB}
+        F_b=m_fg=(\rho _o - \rho)\tikzmarknode{VF}{V_f}g
+    \end{equation}
+    \begin{tikzpicture}[remember picture,overlay]
+        \draw[->] (VF.north) to[out=100, in=190, looseness=1.5] ($(VF)+(0.425,0.75)$) node[right] {AL};
+    \end{tikzpicture}
+    Substituting $\rho$ from equation (\ref{RHO}) in equation (\ref{FB}), we get
+    \begin{equation}\label{Buo}
+        F_b=(\rho _0 \beta \triangle T)(AL)g
+    \end{equation}
+    Viscous force $F_v = \mu \big(\frac{u}{L} \big)A$. From dimensional analaysis, we get viscous force $=$ interial force.
+
+    \begin{equation}\label{u_exp}
+       \text{Therefore, }  \mu \big(\frac{u}{L} \big)A = \rho A u^2 \Rightarrow u = \frac{u}{L\rho}
+    \end{equation}
+    Substituting $u$ from equation (\ref{u_exp}) into $F_v$ expression, we get
+    \begin{equation}\label{Vis}
+        F_v = \mu \big(\frac{u}{L} \big)A \Rightarrow F_v = \frac{\mu ^ 2 A}{L^2\rho}
+    \end{equation}
+    From equations (\ref{Buo}), (\ref{Vis}) and (\ref{GR}), we get
+    \begin{equation}
+        \boxed{\text{Gr}=\frac{(\rho _0 \beta \triangle T)(AL)g}{\bigg( \frac{\mu ^ 2 A}{L^2\rho} \bigg)}=\frac{\rho^2L^3g\beta \triangle T}{\mu^2}}
+    \end{equation}
+    \begin{itemize}
+        \item Property values ($C_P,\ \mu,\ \beta, \ \rho$, \textit{etc.}) are measured at film temperature $T_f=\frac{T_s+T_0}{2}$.
+        
+        \item Important relationship for natural and forced convection obtained by dimensional analysis includes, 
+        
+        \begin{itemize}
+            \item[---] Natural convection: Nu = f(Gr, Pr)
+            \item[---] Forced convection: Nu = f(Re, Pr) or St = f(Re, Pr)
+        \end{itemize}
+        
+        \item In a combined forced and natural convection process, 
+        \begin{center}
+        $\frac{\text{Gr}}{\text{Re}^2}$=
+        $ 
+            \begin{cases} 
+            >1, &\text{Natural convection dominates}\\
+            1, &\text{Both convection are comparable}\\
+            <1, &\text{Forced convection dominates}
+            \end{cases}
+        $
+        \end{center}
+        
+    \end{itemize}       
+    $T$ - Temperature (K), 
+    $T_0$ - Free stream temperature (K),
+    $\rho _0$ - Bulk fluid density (g/m$^3$),
+    $\rho$ - Fluid density inside heated air (g/m$^3$),
+    $P$ - Pressure (Pa),
+    $V$ - Volume (m$^3$),
+    $n$ - Number of moles (moles), 
+    $R$ - Universal gas constant (J/mol K),
+    $T$ - Temperature (K),
+    $m_f$ - Mass of fluid (g),
+    $g$ - Acceleration due to gravity (m/s$^2$),
+    $V_f$ - Volume of fluid (m$^3$),
+    $A$ - Area (m$^2$),
+    $L$ - Characteristic length of the system (m),
+    $\mu$ - Dynamic viscosity of the fluid (Pa s),
+    $u$ - Fluid velocity (m/s),
+    $C_P$ - Specific heat capacity (J/kg K),
+    $T_f$ - Film temperature (K),
+    $T_s$ - Surface/wall temperature (K),
+    Nu - Nusselt number,
+    Pr - Prandtl number,
+    St - Stanton number,
+    Re - Reynolds number.
+    
+    \item \textbf{Rayleigh number (Ra) : }
+    $$\text{Ra}=\text{GrPr}=\frac{\text{Buoyancy force}}{\text{Viscous force}} \times \underbrace{\frac{\text{Momentum diffusivity}}{\text{Heat diffusivity}}}_{\big( \frac{1}{\text{Heat diffusion rate}} \big) = \frac{\mu}{\rho\alpha}=\frac{\mu C_P}{k}} = \frac{\rho^2L^3g\beta \triangle T C_P}{\mu k} $$
+    \begin{itemize}
+        \item Property values ($C_P,\ \mu,\ \beta, \ \rho$, \textit{etc.}) are measured at film temperature $T_f=\frac{T_s+T_0}{2}$.
+        
+        \item Ra ($=$ GrPr) is used in the free convection calculations to classify the flow. 
+        
+    \end{itemize}
+    $\rho$ - Density (g/m$^3$),
+    $\beta$ - Thermal coefficient of expansion (K$^{-1}$),
+    $T$ - Temperature (K),
+    $g$ - Acceleration due to gravity (m/s$^2$),
+    $L$ - Characteristic length of the system (m),
+    $\mu$ - Dynamic viscosity of the fluid (Pa s),
+    $C_P$ - Specific heat capacity (J/kg K),
+    $T_f$ - Film temperature (K),
+    $T_s$ - Surface/wall temperature (K),
+    $T_0$ - Free stream temperature (K),
+    $k$ - Thermal conductivity (W/m K),
+    Gr - Grashof number,
+    Pr - Prandtl number.
+    
+    \item \textbf{Graetz number (Gz) :} It is used to characterize fluid flow in a pipe under laminar flow conditions and also it correlates thermally developing flow.
+    $$\text{Gz}=\frac{\text{Thermal capacity}}{\text{Convective heat flux}}=\bigg( \frac{D_H}{L} \bigg) \text{RePr} = \bigg( \frac{D_H}{L} \bigg) \text{Pe}$$
+    Similarly mass transfer analogue of Gz is defined as
+    $$\text{Gz}=\bigg( \frac{D_H}{L} \bigg) \text{ReSc}$$
+    $D_H$ - Hydraulic diameter (m), $L$ - Characteristic length of the system (m), Re - Reynolds  number, Pr - Prandtl number, Sc - Schmidt number, Pe - Peclet number.
+    
+    \item \textbf{Knudsen number (Kn) :} It is defined as the ratio of the molecular mean free path length to a representative physical length scale. This length scale could be, for example, the radius of a body in a fluid.
+    
+    $$\text{Kn}=\frac{\text{Molecular mean free path}}{\text{Characteristic length of the system}}=\frac{\lambda}{L}$$
+    
+    \begin{itemize}
+        \item If Kn $\geq$ 10, Knudsen diffusion happens.$\text{ Knudsen diffusivity}\  (D_k)=\frac{DV}{3}=48.5D\sqrt{\frac{T}{M}}$
+        Knudsen diffusion flux can be found by replacing `$D_{AB}$' by `$D_k$' in the fick's law of diffusion. \vspace{-8 mm}
+        
+        \begin{align*}
+            D_k&\neq f(\text{P})\\&=f(\text{Pore diameter, molecular velocity})\\&=f(\text{Pore diameter, Temperature, Molecular weight})
+        \end{align*}
+        
+        \item Kn $\leq \frac{1}{100}$, Molecular (or) Fick's diffusion happens. 
+        
+        \item If 10 $\leq$ Kn $\leq \frac{1}{100}$, Transition region diffusion happens.
+    \end{itemize}
+    $\lambda$ - Molecular mean free path (m) $\bigg(=\frac{\mu}{\rho}\sqrt{\frac{\pi m}{2k_BT}}\bigg) $, $L$ - Characteristic length of the system (m), $\mu$ - Dynamic viscosity of the fluid (Pa s), $\rho$ - Density (g/m$^3$), $m$ - Molecular mass (g), $k_B$ - Boltzmann constant (J/K), $T$ - Thermodynamic temperature (K), $D$ - Pore diameter (m), $D_{AB}$ - Diffusion coefficient (m$^2$/s), P - Pressure (Pa), 
+\end{enumerate}
+\begin{center}
+    \large \textbf{Important Correlations Using Dimensionless Numbers}    
+\end{center}
+
+\begin{enumerate}
+    \item \textbf{Dittus-Boelter equation :} \\Dittus-Boelter equation for turbulent flow inside a circular cross sectional area pipe is
+        \begin{align}
+            \text{Nu} &= 0.023 \ \text{Re}^{0.8}\ \text{Pr}^{n}\\
+            \Rightarrow \frac{hd}{k} &= 0.023 \ \bigg( \frac{\rho \bar{v} d}{\mu} \bigg)^{0.8}\ \bigg( \frac{C_P \mu}{k} \bigg)^{n} \label{DBE}\\
+            \text{Where, } \nonumber n &= 
+            \begin{cases}
+            0.4, &\text{Fluid heated} \\
+            0.3, &\text{Fluid cooled}
+            \end{cases}
+        \end{align}
+        Similarly mass transfer analogue of Dittus-Boelter equation is $\text{Sh} = 0.023 \ \text{Re}^{0.8}\ \text{Sc}^{n}$. Validity checks to use the Dittus-Boelter equation are $\frac{L}{d} > 60$, $0.6<\text{Pr}<100$, and $2500<\text{Re}<1.25\times 10^6$.\\ 
+        
+        
+        \begin{minipage}{.45\textwidth}
+        \underline{Constant average velocity ($\bar{v}$) :}\\  From equation (\ref{DBE}) we get, \\ $hd \propto d^{0.8} \Rightarrow \boxed{h \propto d^{-0.2}}$\\
+        \end{minipage}%
+        \vline\hfill
+        \begin{minipage}[c]{0.45\textwidth}
+        \underline{Constant mass flow rate ($\dot{m}$) :} \\ In equation (\ref{DBE}), replace $\bar{v}$ by $\frac{Q}{A} \Rightarrow \bar{v} \propto \frac{1}{d^2}$. We get,\\ $hd \propto (\bar{v}d)^{0.8} \Rightarrow hd \propto \big( \frac{d}{d^2} \big) ^{0.8} \Rightarrow \boxed{h \propto d^{-1.8}}$
+        \end{minipage}
+        
+        \vspace{3 mm} Nu -  Nusselt number, Re - Reynolds  number, Pr -  Prandtl number, Sh - Sherwood  number, Sc -  Schmidt number, $h$ - Convective heat transfer co-efficient (W/m$^2$ K), $d$ - Diameter (m), $k$ - Thermal conductivity (W/m K), $\rho$ - Density (g/m$^3$), $\bar{v}$ - Average velocity (m/s),
+        $\mu$ - Dynamic viscosity of the fluid (Pa s), $C_P$ - Specific heat capacity (J/kg K), $L$ - Characteristic length of the system (m), $Q$ - Volumetric flowrate (m$^3$/s), $A$ - Area (m$^2$).
+        
+        
+        \item \textbf{Sieder-Tate equation :} \\Sieder-Tate equation for turbulent flow inside a circular cross sectional area pipe is
+        \begin{align}
+            \text{Nu} &= 0.027 \ \text{Re}^{0.8}\ \text{Pr}^{(1/3)}\ \bigg( \frac{\mu _b}{\mu _w} \bigg)^{0.14}\\
+            \Rightarrow \frac{hd}{k} &= 0.027 \ \bigg( \frac{\rho \bar{v} d}{\mu} \bigg)^{0.8}\ \bigg( \frac{C_P \mu}{k} \bigg)^{(1/3)}\ \bigg( \frac{\mu _b}{\mu _w} \bigg)^{0.14} \label{STE} \Rightarrow \boxed{h \propto d^{-0.2}}
+        \end{align}
+        Validity checks to use the Sieder-Tate equation are $\frac{L}{d} \geq 60$, $0.7<\text{Pr}<16700$, and $\text{Re} \geq 10000$. Sieder-Tate equation for laminar flow inside a circular cross sectional area pipe is
+        \begin{align}
+            \text{Nu} &= \bigg[(\text{RePr})\bigg(\frac{d}{L}\bigg)\bigg]^{(1/3)}\ \bigg( \frac{\mu _b}{\mu _w} \bigg)^{0.14}
+        \end{align}
+        
+        \vspace{3 mm} Nu -  Nusselt number, Re - Reynolds  number, Pr -  Prandtl number, $h$ - Convective heat transfer co-efficient (W/m$^2$ K), $d$ - Diameter (m), $k$ - Thermal conductivity (W/m K), $\rho$ - Density (g/m$^3$), $\bar{v}$ - Average velocity (m/s),
+        $\mu$ - Dynamic viscosity of the fluid (Pa s), $C_P$ - Specific heat capacity (J/kg K), $L$ - Characteristic length of the system (m), $\mu _b$ - Dynamic viscosity of the fluid at bulk temperature (Pa s), $\mu _w$ - Dynamic viscosity of the fluid at wall temperature (Pa s).
+        
+        \item \textbf{Liquids metals (Hg, Na, Lead Bismuth alloy, \textit{etc}) : }
+        
+        \begin{itemize}
+            \item High $\alpha$ liquid metals can be used where high heat removal is to be achieved (\textit{e.g} :- Coolants in a nuclear reactors).
+            
+            \item Since for liquid metals $\alpha >> \nu$, $\text{Pr} \simeq 0.01 \text{ to } 0.04$.
+            
+            \item Nu = $f(\text{Pe})$.
+        \end{itemize}
+        
+        $\alpha$ - Thermal diffusivity (m$^2$/s),
+        Hg - Mercury,
+        Na - Sodium,
+        $\nu$ - Momentum diffusivity (m$^2$/s),
+        Pr -  Prandtl  number,
+        Nu - Nusselt  number,
+        Pe - Peclet number.
+        
+        
+        \item Mass transfer in ``liquids" flowing past single sphere\\$$\text{Sh}=\frac{k_Cd}{D_{AB}}=2+0.95\text{ Re}^{(1/2)}\text{ Sc}^{(1/3)}$$ When sphere is placed in a still fluid, Re$=0$. So, $\boxed{\text{Sh}=2}$.\\[3 mm]
+        Sh - Sherwood  number,
+        $k_C$ - Mass transfer co-efficient for concentration driving force,
+        $d$ - Diameter (m),
+        $D_{AB}$ - Diffusivity of the system (m$^2$/s),
+        Re - Reynolds  number,
+        Sc - Schmidt number.
+        
+        \item For a convective mass transport over (external flow) a flat plate under laminar condition $$\text{Sh}=0.664\text{ Re}^{(1/2)}\text{ Sc}^{(1/3)} \text{ and local Sh}_x =\frac{\text{Sh}}{2}$$
+        Sh - Sherwood  number, Re - Reynolds  number, Sc - Schmidt number.
+\end{enumerate}
+\end{document}
+%---------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------

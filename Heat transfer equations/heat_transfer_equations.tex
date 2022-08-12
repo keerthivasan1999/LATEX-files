@@ -1,0 +1,31 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,times}
+\begin{document}
+\section*{Heat transfer}
+
+\textit{Equation of heat conduction}\vspace{3mm}\\
+In Cartesian co-ordinates,
+$$\nabla ^{2}T+\frac{\dot{q}}{k}=\frac{1}{\alpha}\frac{dT}{dt}$$
+where,\\
+$\nabla$ = Laplace operator\\
+$\dot{q}$ = Heat generation per unit volume\\
+$\alpha$ = Thermal diffusivity\\
+\begin{itemize}
+    \item \textit{Steady state condition:} $\nabla ^{2}T+\frac{\dot{q}}{k}=0$ - Poisson equation
+    \item \textit{No heat sources:} $\dot{q}=0$ - Diffusion equation
+    \item \textit{No heat source and steady state:} $\dot{q}=0$ and $\frac{dT}{dt}=0$ - Laplace equation
+\end{itemize}
+In cylinderical co-ordinates,
+$$ \frac{1}{r}\frac{\partial}{\partial r}\left( r \frac{\partial T}{\partial r} \right)+\frac{\dot{q}}{k}=\frac{1}{\alpha}\frac{dT}{dt}$$
+In spherical co-ordinators,
+$$\frac{\partial^2T}{\partial r^2}+\frac{2}{r} \frac{\partial T}{\partial r}+\frac{1}{r^2\sin\psi}\frac{\partial }{\partial \psi}\left( \sin\psi\frac{\partial T}{\partial \psi}\right)+\frac{1}{r^2\sin\psi}\frac{\partial }{\partial \psi}\left(\frac{\partial ^2T}{\partial \phi}\right)+\frac{\dot{q}}{k}=\frac{1}{\alpha}\frac{dT}{dt}$$
+If temperature variation is only in radial direction, then for steady state conditions with no heat generations, conduction equation becomes, 
+$$\frac{\partial^2T}{\partial r^2}+\frac{2}{r} \frac{\partial T}{\partial r}=0\Rightarrow \frac{\partial }{\partial r}\left(r^2\frac{\partial T}{\partial r}\right)=0$$
+
+\noindent \textbf{Boiling}\\[0.5cm]
+\textit{Nucleate boiling}$\colon$ $q_{s}=\mu_{l}h_{fg}\big(g \sigma ^{-1}(\rho_{l}-\rho_v)\big)^{\frac{1}{2}}\big(\big(\frac{C_{pl}}{C_{sg}}\big)\frac{\triangle T_e}{h_{fg}Pr^{1.7}}\big)^3$
+\\ \textit{Critical heat flux / Burnout point / Boiling crisis}$\colon$
+$q_{s}=0.18h_{fg}(g \sigma (\rho_{l}-\rho_v) \rho_{v}^{2})^{\frac{1}{4}}$
+\end{document}

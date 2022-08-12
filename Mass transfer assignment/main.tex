@@ -1,0 +1,65 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[top=1cm, left=1cm, right=1cm, bottom=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref,graphicx,amsmath,pdfpages,float,multirow}
+\begin{document}
+\begin{center}
+    \textbf{CHE313A: Mass Transfer \& Its Applications\\Assignment}
+\end{center}
+Date:\\
+Due:
+\begin{enumerate}
+    \item (a) In a binary mixture containing components A and B, the relative volatility of A with respect to B is 2.5 when mole fractions are used. The molecular weights of A and B are 78 and 92 respectively. If the compositions are however expressed in mass fractions, what will be the value of relative volatility?\\[3 mm]
+    (b) The vapor pressure data for n-Hexane (A) and n-Octane (B) system is given below. Compute the equilibrium data and relative volatility for the system at a total pressure of 101.32 kPa.
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Temperature\\ T ($^{\circ}$C)\end{tabular}}} & \multicolumn{2}{c|}{\textbf{Vapour pressure (kPa)}} \\ \cline{2-3} 
+      & \textbf{n-Hexane, \textit{P}$_\text{A}^\text{s}$} & \textbf{n-Octane, \textit{P}$_\text{B}^\text{s}$} \\ \hline
+    68.7  & 101.32                & 16.1                  \\ \hline
+    79.4  & 136.7                 & 23.1                  \\ \hline
+    93.3  & 197.3                 & 37.1                  \\ \hline
+    107.2 & 284.0                 & 57.9                  \\ \hline
+    125.7 & 456.0                 & 101.32                \\ \hline
+    \end{tabular}%
+    \end{table}
+    
+    \item The vapour pressures of acetone (A) and acetonitrile (B) can be evaluated by the Antoine equations
+    $$ ln \  \text{\textit{P}}_\text{A}^S = 14.5463 - \frac{2940.46}{T-35.93}$$
+    $$ln \  \text{\textit{P}}_\text{B}^S = 14.2724 - \frac{2945.47}{T-49.15}$$
+    \\where T is in K and \textit{P}$^\text{s}$ is in kPa. Assuming that the solutions formed by these are ideal, calculate\\
+    (a) x$_\text{A}$ and y$_\text{A}$ at 327 K and 65 kPa\\
+    (b) T and y$_\text{A}$ at 65 kPa and x$_\text{A}$ = 0.4\\
+    (c) P and y$_\text{A}$ at 327 K and x$_\text{A}$ = 0.4\\
+    (d) T and x$_\text{A}$ at 65 kPa and y$_\text{A}$ = 0.4\\
+    (e) P and x$_\text{A}$ at 327 K and y$_\text{A}$ = 0.4\\
+    (f) The fraction of the system that is liquid and the composition of the liquid and vapour in equilibrium at 327 K and 65 kPa when the overall composition of the system is 70 mole per cent acetone.
+    
+    \item Mixtures of n-Heptane (A) and n-Octane (B) are expected to behave ideally. The total pressure over the system is 101.3 kPa. Using the vapour pressure data given below,
+    
+    \begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}c@{}}Temperature\\ T ($^{\circ}$C)\end{tabular}}} & \multicolumn{2}{c|}{\textbf{Vapour pressure (kPa)}} \\ \cline{2-3} 
+      & \textbf{n-Hexane, \textit{P}$_\text{A}^\text{s}$} & \textbf{n-Octane, \textit{P}$_\text{B}^\text{s}$} \\ \hline
+    371.4 & 101.3                 & 44.4                  \\ \hline
+    378   & 125.3                 & 55.6                  \\ \hline
+    383   & 140.0                 & 64.5                  \\ \hline
+    388   & 160.0                 & 74.8                  \\ \hline
+    393   & 179.9                 & 86.6                  \\ \hline
+    398.6 & 205.3                 & 101.3                 \\ \hline
+    \end{tabular}%
+    \end{table}
+    (a) Construct the boiling point diagram and\\
+    (b) The equilibrium diagram and \\
+    (c) Deduce an equation for the equilibrium diagram using an arithmetic average value of relative volatility.
+    
+    
+    \item Binary system of acetonitrile (A) and nitromethane (B) conforms closely to Raoult's law. Vapour pressures for the pure species are given by the following Antoine equations.
+    $$ln \  \text{\textit{P}}_\text{A}^S = 14.2724 - \frac{2945.47}{T-49.15}$$
+    $$ ln \  \text{\textit{P}}_\text{B}^S = 14.2043 - \frac{2972.64}{T-64.15}$$
+    \\where T is in K and \textit{P}$^\text{s}$ is in kPa. Prepare a graph showing T vs x$_\text{A}$ and T vs y$_\text{A}$ for a pressure of 70 kPa.
+\end{enumerate}
+\end{document}

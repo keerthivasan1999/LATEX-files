@@ -1,0 +1,155 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=2 cm, top=1.5cm, bottom=1.5cm, right=1.5 cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,enumitem}
+\usepackage[version=4]{mhchem}
+%\usepackage{cmbright}
+%\usepackage{kmath,kerkis}
+
+
+\begin{document}
+\centering\textbf{\Large Chemical Reaction Equilibrium}\begin{flushright} -\textit{Keerthi vasan M (kvasan166@gmail.com)} \end{flushright} \textbf{Step by step procedure to determine equilibrium conversion ($X_{eq}$) at given temperature ($T$) and pressure ($P$) using \emph{Van't Hoff procedure}.}\\[0.5 cm]
+Reaction stoichiometry: $a A + b B \rightleftharpoons c C + d D$\\
+\begin{enumerate}
+    \item Initial moles of A, B, C and D are $n_{A0}$, $n_{B0}$, $n_{C0}$ and $n_{D0}$ respectively.
+    
+    \item Total moles is $N_0 = \sum n_{i0}$ where $i = A,B,C,D$
+    
+    \item Change in moles due to reaction is $\triangle n = \sum \upsilon_i$ where $i = A,B,C,D$. Here $\upsilon$ denotes the signed stoichiometric coefficient and $$\upsilon_A=-a, \upsilon_B=-b, \upsilon_C=c, \upsilon_D=d$$
+    
+    \item Standard temperature $T_0 = $ 25 $^{\circ}$C $=$ 298 K\\Standard pressure  $P^0 = $ 1 atm or 1 bar
+    
+    \item Standard heat of reaction (in J/mol) $= \triangle H_R^{\circ} = \sum \upsilon_i \triangle H_{iF}^{\circ}$ where $\triangle H_{iF}^{\circ}$ is the standard heat of formation of $i \ (=A,B,C,D)$. 
+    
+    \item Standard entropy of reaction (in J/mol K) $= \triangle S_R^{\circ} = \sum \upsilon_i \triangle S_{iF}^{\circ}$ where $\triangle S_{iF}^{\circ}$ is the standard entropy of formation of $i \ (=A,B,C,D)$. 
+    
+    \item Standard gibbs energy of reaction (in J/mol) $= \triangle G_R^{\circ}=\triangle H_R^{\circ}-T_0 \triangle S_R^{\circ}$\\Note: If the standard gibbs energy of formation $\triangle G_{iF}^{\circ}$ are given, then $\triangle G_R^{\circ}$ can be directly obtained as $\triangle G_R^{\circ} = \sum \upsilon_i \triangle G_{iF}^{\circ}$.
+    
+    \item Equilibrium constant $K_0$ at Standard temperature $T_0$ is given by $\triangle G_R^{\circ} = - R\ T_0\ ln(K_0)$ where $R$ is the universal gas constant. Find the value of $K_0$. \\\underline{Note:} Ensure the unit consistancy of $\triangle G_R^{\circ}$ and $R$.
+    
+    \item Van't Hoff expression to get equilibrium constant $K$ at reaction temperature $T$ is $$ ln \bigg(\frac{K}{K_0}\bigg)= -\frac{\triangle H_R^{\circ}}{R} \left[ \frac{1}{T}-\frac{1}{T_0} \right]$$Find $K$.
+    
+    \item Equilibrium constant ($K_y$) based on mole fraction at the reaction pressure ($P$) is $$K_a=K=\frac{K_y P^{\triangle n}}{[P^{\circ}]^{\triangle n}}$$ Find $K_y$.
+    
+    \item Use mole balance table and get the expression for mole of key component.\\\underline{Important note:} This is only the example of the form and not the exact expression.$$K_y=\frac{\bigg( n_{C0} + \frac{c}{a}\ x \bigg)^c \bigg(n_{D0} + \frac{d}{a}\ x\bigg)^d}{\bigg(n_{A0} - x \bigg)^a \bigg( n_{B0} - \frac{b}{a}\ x \bigg)^b}\frac{1}{\bigg( N+\triangle n\ x \bigg)^{\triangle n}}$$
+    
+    \item From above two steps, solve and get the value of for $x$. $x$ is the extend of reaction/moles of key component reacted.
+    
+    \item Equilibrium conversion (Assuming $A$ is the key component) in percentage (\%) is $$\boxed{X_{eq}=\frac{x}{n_{A0}}*100}$$
+\end{enumerate}
+\newpage
+\textbf{Step by step procedure to determine equilibrium conversion ($X_{eq}$) at given temperature ($T$) and pressure ($P$) using \emph{Thermodynamic relation procedure}.}\\[0.5 cm]
+Reaction stoichiometry: $a A + b B \rightleftharpoons c C + d D$\\
+\begin{enumerate}
+    \item Initial moles of A, B, C and D are $n_{A0}$, $n_{B0}$, $n_{C0}$ and $n_{D0}$ respectively.
+    
+    \item Total moles is $N_0 = \sum n_{i0}$ where $i = A,B,C,D$
+    
+    \item Change in moles due to reaction is $\triangle n = \sum \upsilon_i$ where $i = A,B,C,D$. Here $\upsilon$ denotes the signed stoichiometric coefficient and $$\upsilon_A=-a, \upsilon_B=-b, \upsilon_C=c, \upsilon_D=d$$
+    
+    \item Standard temperature $T_0 = $ 25 $^{\circ}$C $=$ 298 K\\Standard pressure  $P^0 = $ 1 atm or 1 bar
+    
+    \item Standard heat of reaction (in J/mol) $= \triangle H_R^{\circ} = \sum \upsilon_i \triangle H_{iF}^{\circ}$ where $\triangle H_{iF}^{\circ}$ is the standard heat of formation of $i \ (=A,B,C,D)$. 
+    
+    \item Standard entropy of reaction (in J/mol K) $= \triangle S_R^{\circ} = \sum \upsilon_i \triangle S_{iF}^{\circ}$ where $\triangle S_{iF}^{\circ}$ is the standard entropy of formation of $i \ (=A,B,C,D)$. 
+    
+    \item For the computation of specific heat contribution at reaction temperature ($T$), assume specific heat function of components to be given by polynomial as $$C_{Pi}=a_{0i} + a_{1i}\ T +a_{2i}\ T^2 +a_{3i}\ T^3 \text{ where } i=A,B,C,D$$Now compute
+    \begin{tabular}{cc}
+    $\triangle a_0 = \sum \upsilon_i\ a_{0i}$ & $\triangle a_1 = \sum \upsilon_i\ a_{1i}$ \\
+    $\triangle a_2 = \sum \upsilon_i\ a_{2i}$ & $\triangle a_3 = \sum \upsilon_i\ a_{3i}$ 
+    \end{tabular}
+     \begin{align*} 
+        \triangle C_{P}&=\triangle a_0 + \triangle a_1\ T+ \triangle a_2\ T^2+ \triangle a_3\ T^3\\
+        \Rightarrow   \int_{T_0}^{T} \triangle C_P\ dT &=\int_{T_0}^{T} [\triangle a_0 + \triangle a_1\ T+ \triangle a_2\ T^2+ \triangle a_3\ T^3]\ dT\\
+        &= \triangle a_0\ [T-T_0]+ \frac{\triangle a_1}{2}\ [T^2-T_0^2]+\frac{\triangle a_2}{3}\ [T^3-T_0^3]+\frac{\triangle a_3}{4}\ [T^4-T_0^4]\\
+        \text{Similarly,}\\
+        \int_{T_0}^{T} \frac{\triangle C_P}{T}\ dT &=\int_{T_0}^{T} \frac{[\triangle a_0 + \triangle a_1\ T+ \triangle a_2\ T^2+ \triangle a_3\ T^3]}{T}\ dT\\
+        &=\triangle a_0\  ln\frac{T}{T_0} + \triangle a_1\ [T-T_0]+ \frac{\triangle a_2}{2}\ [T^2-T_0^2]+ \frac{\triangle a_3}{3}\ [T^3-T_0^3]
+    \end{align*}
+    \underline{Important note:} Ensure unit consistency.
+    
+    \item Enthalpy of reaction (in J/mol) at reaction temperature ($T$) is $$\triangle H_R=\triangle H_R^{\circ}+\int_{T_0}^{T} \triangle C_P\ dT $$
+    
+    \item Entropy of reaction (in J/mol K) at reaction temperature ($T$) is $$\triangle S_R=\triangle S_R^{\circ}+\int_{T_0}^{T} \frac{\triangle C_P}{T}\ dT $$
+    
+    \item Gibbs energy of reaction (in J/mol) at reaction temperature ($T$) is $\triangle G_R=\triangle H_R-T\ \triangle S_R$
+    
+    \item Equilibrium constant $K_a$ at reaction temperature $T$ is given by $\triangle G_R = - R\ T\ ln(K_a)$ where $R$ is the universal gas constant. Find the value of $K_a$. \\\underline{Note:} Ensure the unit consistancy of $\triangle G_R$ and $R$.
+    
+    \item Equilibrium constant ($K_y$) based on mole fraction at the reaction pressure ($P$) is $$K_a=K=\frac{K_y P^{\triangle n}}{[P^{\circ}]^{\triangle n}}$$ Find $K_y$.
+    
+    \item Use mole balance table and get the expression for mole of key component.\\\underline{Important note:} This is only the example of the form and not the exact expression.$$K_y=\frac{\bigg( n_{C0} + \frac{c}{a}\ x \bigg)^c \bigg(n_{D0} + \frac{d}{a}\ x\bigg)^d}{\bigg(n_{A0} - x \bigg)^a \bigg( n_{B0} - \frac{b}{a}\ x \bigg)^b}\frac{1}{\bigg( N+\triangle n\ x \bigg)^{\triangle n}}$$
+    
+    \item From above two steps, solve and get the value of for $x$. $x$ is the extend of reaction/moles of key component reacted.
+    
+    \item Equilibrium conversion (Assuming $A$ is the key component) in percentage (\%) is $$\boxed{X_{eq}=\frac{x}{n_{A0}}*100}$$
+\end{enumerate}
+\newpage
+\textbf{Problems involving Chemical Reaction Equilibrium}
+\begin{enumerate}
+    \item Reforming of natural gas is one of the important route to produce hydrogen in a petrochemical complex (\ce{CH4 + H2O <=> CO + 3H2}). Find the equilibrium conversion at 1 bar pressure and 850 K, using the fundamental thermodynamic relation ($\triangle G_R=\triangle H_R-T\ \triangle S_R$). The inlet feed contains the molar mixture of 1 : 1 \ce{CH4} : \ce{H2O} only. The Specific heat capacities of components are given as\\[2 mm]
+    \begin{tabular}{cc}
+    $\frac{C_{P,CO}}{R}=3.912- 3.913\times10^{-3}\ T$ & $\frac{C_{P,H_2}}{R}=2.883 + 3.681\times10^{-3}\ T$ \\
+    &\\
+    $\frac{C_{P,CH_4}}{R}=4.568-8.975\times10^{-3}\ T$ & $\frac{C_{P,H_2O}}{R}=4.395-4.186\times10^{-3}\ T$
+    \end{tabular}
+    \\[2 mm] Where $R$ is the universal gas constant in appropriate units.\\[3 mm]\textbf{Solution: }$X_{CO}=69$\%
+    
+    \item \ce{CO} Methanation is a significant step in the production of synthetic natural gas (\ce{CO + 3H2 <=> CH4 + H2O}). Find the equilibrium conversion at 1 bar pressure and 800 K, using the fundamental thermodynamic relation ($\triangle G_R=\triangle H_R-T\ \triangle S_R$). The inlet feed contains the molar mixture of 1 : 3 \ce{CO} : \ce{H2} only. The Specific heat capacities of components are given as\\[2 mm]
+    \begin{tabular}{cc}
+    $\frac{C_{P,CO}}{R}=3.912- 3.913\times10^{-3}\ T$ & $\frac{C_{P,H_2}}{R}=2.883 + 3.681\times10^{-3}\ T$ \\
+    &\\
+    $\frac{C_{P,CH_4}}{R}=4.568-8.975\times10^{-3}\ T$ & $\frac{C_{P,H_2O}}{R}=4.395-4.186\times10^{-3}\ T$
+    \end{tabular}
+    \\[2 mm] Where $R$ is the universal gas constant in appropriate units.\\[3 mm]\textbf{Solution: }$X_{CO}=53.615$\%
+    
+    \item Ammonia production from nitrogen and hydrogen is thermodynamically favorable at higher pressure and lower temperature. Compute the percentage equilibrium conversion ($X_{N_2}$) at the different operating conditions to illustrate the fact the lower temperature and higher pressure indeed favor ammonia production. The operating conditions are a) P = 1 bar, T = 650 K; b) P = 4 bar, T = 650 K and c) P = 4 bar, T = 500 K. Assume initial feed mixture consists of 1 : 3 \ce{N2} : \ce{H2}.\\[3 mm]
+    \textbf{Solution: }\\
+    \begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{\begin{tabular}[c]{@{}l@{}}Temperature, T\\ (K)\end{tabular}} & \textbf{Pressure, P (bar)} & \textbf{\begin{tabular}[c]{@{}l@{}}Equilibrium\\ constant, $K$\\ (-)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Equilibrium\\ constant, $K_y$\\ (-)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Percentage\\ conversion, $X_{N_2}$\\ (\%)\end{tabular}} \\ \hline
+650                                                                   & 1                       & 0.00108                                                                          & 0.00108                                                                             & 2.67\%                                                                               \\ \hline
+650                                                                   & 4                       & 0.00108                                                                          & 0.017368944                                                                         & 7.6\%                                                                                \\ \hline
+500                                                                   & 4                       & 0.177328462                                                                      & 2.837255396                                                                         & 43.9\%                                                                               \\ \hline
+\end{tabular}
+\end{table}
+
+    \item Methanol production from syngas follows the reaction stoichiometry as \ce{CO + 2H2 <=> CH3OH}. Determine the percentage equilibrium conversion of CO ($X_{CO}$) and the mole fraction of all the components at equilibrium at 1 bar pressure for an input mixture consisting of 1 : 3 molar mixture of \ce{CO} and \ce{H2} at 400 K. Report conversion corrected to three decimal precision.\\[3 mm]
+    \textbf{Solution: }\\$X_{CO}=52$\%\\
+    Mole fraction of \CE{CO}: $n_{CO} = 0.164$\\
+    Mole fraction of \ce{H2}: $n_{H_2} = 0.664$\\
+    Mole fraction of \ce{CH3OH}: $n_{CH_3OH} = 0.172$
+
+    \item Dimethyl ether synthesis from syngas mixture can be represented by the following reactions. Formulate generic expression to determine the composition of the mixture at equilibrium\\[2 mm]
+    \begin{center}
+        \ce{CO + 2H2 <=> CH3OH}\\[1 mm]
+        \ce{CO2 + 3H2 <=> CH3OH + H2O}\\[1 mm]
+        \ce{CO + H2O <=> CO2 + H2}\\[1 mm]
+        \ce{2CH3OH <=> CH3OCH3 + H2O}
+    \end{center}
+    
+    \item   \begin{enumerate}[label=(\alph*)]
+                \item \ce{CO} Methanation is a significant step in the production of synthetic natural gas. The reaction stoichiometry is given by \ce{CO + 3H2 <=> CH4 + H2O}. Find the equilibrium conversion at 1 bar pressure and 800 K using the Van’t Hoff relation. The inlet feed contains the molar mixture of 1 : 5 \ce{CO} : \ce{H2} only.
+                
+                \item If Water gas shift reaction also occurs along with \ce{CO + H2O <=> CO2 + H2}, recompute the conversion of \ce{CO} and the yield of methane. What is the percentage decrease in the yield of methane.
+            \end{enumerate}
+\end{enumerate}
+\vspace{3 mm} \textbf{Additional Data}\\
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Component}                   & \begin{tabular}[c]{@{}l@{}}\textbf{Standard enthalpy of}\\ \textbf{formation (kJ/mol)}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Standard entropy of}\\ \textbf{formation (kJ/mol K)}\end{tabular} \\ \hline
+\ce{CH3OH} & -200.94                                                                           & 0.23988                                                                           \\ \hline
+\ce{CH4}   & -74.52                                                                            & 0.18627                                                                           \\ \hline
+\ce{CO}    & -110.53                                                                           & 0.197556                                                                          \\ \hline
+\ce{CO2}   & -393.51                                                                           & 0.213677                                                                          \\ \hline
+\ce{H2}    & 0                                                                                 & 0.130571                                                                          \\ \hline
+\ce{H2O}   & -241.814                                                                          & 0.188724                                                                          \\ \hline
+\ce{N2}    & 0                                                                                 & 0.1915                                                                            \\ \hline
+\ce{NH3}   & -45.898                                                                           & 0.19266                                                                           \\ \hline
+\end{tabular}
+\end{table}
+\end{document}
